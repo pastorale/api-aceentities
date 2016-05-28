@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\ACEEntities;
+namespace AppBundle\ACEEntities\Core\Core;
 
 use AppBundle\Entity\Core\User\UserGroup;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({})
  */
-abstract class UserACE extends ACE
+class UserACE extends ACE
 {
     /**
      * @var User

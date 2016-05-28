@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\ACEEntities;
+namespace AppBundle\ACEEntities\Core\Core;
 
 use AppBundle\Entity\Core\User\UserGroup;
 use AppBundle\Services\Core\Framework\Security\ACEInterface;

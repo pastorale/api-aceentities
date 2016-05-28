@@ -1,18 +1,18 @@
 <?php
-namespace AppBundle\ACEEntities;
+namespace AppBundle\ACEEntities\Core\Core;
 
 use AppBundle\Entity\Core\User\UserGroup;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repositories\Core\Core\UserGroupACERepository")
  * @ORM\Table(name="core__security__user_group_ace")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({"handbook" = "AppBundle\ACEEntities\Organisation\Handbook\HandbookUserGroupACE"})
  */
-abstract class UserGroupACE extends ACE
+class UserGroupACE extends ACE
 {
     /**
      * @var UserGroup
