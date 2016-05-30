@@ -16,6 +16,7 @@ abstract class ACE implements ACEInterface
         $this->allowed = false;
         $this->unlimited = true;
         $this->selectedObjects = new ArrayCollection();
+        $this->attributes = array();
     }
 
     /**
