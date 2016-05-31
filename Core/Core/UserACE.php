@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({})
  */
-class UserACE extends ACE
+abstract class UserACE extends ACE
 {
     /**
      * @var User
