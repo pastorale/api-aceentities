@@ -2,7 +2,7 @@
 namespace AppBundle\ACEEntities\Organisation\Handbook;
 
 use AppBundle\Entity\Organisation\Handbook\Handbook;
-use AppBundle\ACEEntities\UserGroupACE;
+use AppBundle\ACEEntities\Core\Core\UserGroupACE;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
