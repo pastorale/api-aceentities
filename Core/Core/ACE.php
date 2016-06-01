@@ -13,7 +13,7 @@ abstract class ACE implements ACEInterface
 {
     function __construct()
     {
-        $this->allowed = false;
+        $this->allowed = true;
         $this->unlimited = true;
         $this->selectedObjects = new ArrayCollection();
         $this->attributes = array();
@@ -39,7 +39,7 @@ abstract class ACE implements ACEInterface
 
     /**
      * @var bool
-     * @ORM\Column(type="boolean", options={"default":false})
+     * @ORM\Column(type="boolean", options={"default":true})
      */
     protected $allowed;
 
@@ -70,6 +70,7 @@ abstract class ACE implements ACEInterface
      */
     public function getAttributes()
     {
+        
         return $this->attributes;
     }
 

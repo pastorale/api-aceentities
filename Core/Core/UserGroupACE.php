@@ -4,6 +4,7 @@ namespace AppBundle\ACEEntities\Core\Core;
 use AppBundle\Entity\Core\User\UserGroup;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repositories\Core\Core\UserGroupACERepository")
@@ -18,6 +19,7 @@ abstract class UserGroupACE extends ACE
      * @var UserGroup
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Core\User\UserGroup")
      * @ORM\JoinColumn(name="id_group", referencedColumnName="id", nullable=false)
+     * @Serializer\Exclude
      */
     protected $userGroup;
 

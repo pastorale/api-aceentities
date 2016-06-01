@@ -3,6 +3,7 @@ namespace AppBundle\ACEEntities\Organisation\Handbook;
 
 use AppBundle\Entity\Organisation\Handbook\Handbook;
 use AppBundle\ACEEntities\Core\Core\UserGroupACE;
+use AppBundle\Services\Core\Framework\BaseVoterSupportInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -12,8 +13,20 @@ use Hateoas\Configuration\Annotation as Hateoas;
 /**
  * @ORM\Entity
  * @ORM\Table(name="organisation__handbook__handbook_user_group_ace")
+ *
+ * @Serializer\XmlRoot("handbook_user_group_ACE")
+ * @Hateoas\Relation(
+ *  "self",
+ *  href= @Hateoas\Route(
+ *         "get_organisation_usergroup_cloudbookacl",
+ *         parameters = { "organisation" = "expr(object.getUserGroup().getOrganisation().getId())","userGroup" = "expr(object.getUserGroup().getId())","handbookUserGroupACE" = "expr(object.getId())"},
+ *         absolute = true
+ *     ),
+ *  attributes = { "method" = {"put","delete"} },
+ * )
+ *
  */
-class HandbookUserGroupACE extends UserGroupACE
+class HandbookUserGroupACE extends UserGroupACE implements BaseVoterSupportInterface
 {
     /**
      * @var ArrayCollection
