@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="core__security__user_ace")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({})
+ * @ORM\DiscriminatorMap({"user"="AppBundle\ACEEntities\Core\Core\UserACE"})
  */
 abstract class UserACE extends ACE
 {
