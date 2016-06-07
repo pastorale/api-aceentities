@@ -24,6 +24,15 @@ use Hateoas\Configuration\Annotation as Hateoas;
  *     ),
  *  attributes = { "method" = {"put","delete"} },
  * )
+ * @Hateoas\Relation(
+ *  "handbooks",
+ *  href= @Hateoas\Route(
+ *         "get_organisation_usergroup_cloudbookacl_cloud_book_acl",
+ *         parameters = { "organisation" = "expr(object.getUserGroup().getOrganisation().getId())","userGroup" = "expr(object.getUserGroup().getId())"},
+ *         absolute = true
+ *     ),
+ * )
+ * 
  *
  */
 class HandbookUserGroupACE extends UserGroupACE implements BaseVoterSupportInterface
@@ -35,6 +44,7 @@ class HandbookUserGroupACE extends UserGroupACE implements BaseVoterSupportInter
      *      joinColumns={@ORM\JoinColumn(name="id_ace", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="id_handbook", referencedColumnName="id")}
      * )
+     * @Serializer\Exclude
      */
     protected $selectedObjects;
 
