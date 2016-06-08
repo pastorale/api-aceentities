@@ -27,7 +27,7 @@ use Hateoas\Configuration\Annotation as Hateoas;
  * @Hateoas\Relation(
  *  "handbooks",
  *  href= @Hateoas\Route(
- *         "get_organisation_usergroup_cloudbookacl_cloud_book_acl",
+ *         "get_organisation_usergroup_cloudbookacl_cloud_books",
  *         parameters = { "organisation" = "expr(object.getUserGroup().getOrganisation().getId())","userGroup" = "expr(object.getUserGroup().getId())"},
  *         absolute = true
  *     ),
