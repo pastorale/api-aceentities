@@ -17,7 +17,7 @@ abstract class UserGroupACE extends ACE
 {
     /**
      * @var UserGroup
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Core\User\UserGroup")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Core\User\UserGroup" ,inversedBy="ace")
      * @ORM\JoinColumn(name="id_group", referencedColumnName="id", nullable=false)
      * @Serializer\Exclude
      */
