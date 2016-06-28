@@ -11,7 +11,7 @@ use JMS\Serializer\Annotation as Serializer;
  * @ORM\Table(name="core__security__user_group_ace")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
- * @ORM\DiscriminatorMap({"handbook" = "AppBundle\ACEEntities\Organisation\Handbook\HandbookUserGroupACE","user" = "AppBundle\ACEEntities\Core\User\UserUserGroupACE","user_group" = "AppBundle\ACEEntities\Core\User\UserGroupUserGroupACE"})
+ * @ORM\DiscriminatorMap({"handbook" = "AppBundle\ACEEntities\Organisation\Handbook\HandbookUserGroupACE","user" = "AppBundle\ACEEntities\Core\User\UserUserGroupACE","user_group" = "AppBundle\ACEEntities\Core\User\UserGroupUserGroupACE","category" = "AppBundle\ACEEntities\Core\Classification\CategoryUserGroupACE" })
  */
 abstract class UserGroupACE extends ACE
 {
