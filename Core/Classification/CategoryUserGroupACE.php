@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class CategoryUserGroupACE
  *
  * @package AppBundle\ACEEntities\Core\Classification
- * @Serializer\XmlRoot("handbook_user_group_ACE")
+ * @Serializer\XmlRoot("category_user_group_ACE")
  *
  * @ORM\Entity
  * @ORM\Table(name="core__classification__category_user_group_ace")
@@ -30,7 +30,7 @@ class CategoryUserGroupACE extends UserGroupACE implements BaseVoterSupportInter
 {
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Core\Classification\Category",inversedBy="userGroupACEs")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Core\Classification\Category")
      * @ORM\JoinTable(name="core__classification__category_ace_selections",
      *      joinColumns={@ORM\JoinColumn(name="id_ace", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="id_category", referencedColumnName="id")}
