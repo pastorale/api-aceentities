@@ -20,6 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class CategoryUserGroupACE
  *
  * @package AppBundle\ACEEntities\Core\Classification
+ * @Serializer\XmlRoot("handbook_user_group_ACE")
  *
  * @ORM\Entity
  * @ORM\Table(name="core__classification__category_user_group_ace")
