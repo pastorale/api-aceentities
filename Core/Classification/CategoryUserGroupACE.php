@@ -15,6 +15,7 @@ use AppBundle\Services\Core\Framework\BaseVoterSupportInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as Serializer;
 use Doctrine\ORM\Mapping as ORM;
+use Hateoas\Configuration\Annotation as Hateoas;
 
 /**
  * Class CategoryUserGroupACE
@@ -25,6 +26,24 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="core__classification__category_user_group_ace")
  *
+ * @Hateoas\Relation(
+ *  "self",
+ *  href= @Hateoas\Route(
+ *         "get_organisation_usergroup_categoryacl",
+ *         parameters = { "organisation" = "expr(object.getUserGroup().getOrganisation().getId())","userGroup" = "expr(object.getUserGroup().getId())","categoryUserGroupACE" = "expr(object.getId())"},
+ *         absolute = true
+ *     ),
+ *  attributes = { "method" = {"put","delete"} },
+ * )
+ *
+ * @Hateoas\Relation(
+ *  "categories",
+ *  href= @Hateoas\Route(
+ *         "get_organisation_usergroup_categoryacl_categories",
+ *         parameters = { "organisation" = "expr(object.getUserGroup().getOrganisation().getId())","userGroup" = "expr(object.getUserGroup().getId())"},
+ *         absolute = true
+ *     ),
+ * )
  */
 class CategoryUserGroupACE extends UserGroupACE implements BaseVoterSupportInterface
 {
