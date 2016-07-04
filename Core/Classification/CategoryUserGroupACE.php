@@ -36,14 +36,6 @@ use Hateoas\Configuration\Annotation as Hateoas;
  *  attributes = { "method" = {"put","delete"} },
  * )
  *
- * @Hateoas\Relation(
- *  "categories",
- *  href= @Hateoas\Route(
- *         "get_organisation_usergroup_categoryacl_categories",
- *         parameters = { "organisation" = "expr(object.getUserGroup().getOrganisation().getId())","userGroup" = "expr(object.getUserGroup().getId())"},
- *         absolute = true
- *     ),
- * )
  */
 class CategoryUserGroupACE extends UserGroupACE implements BaseVoterSupportInterface
 {

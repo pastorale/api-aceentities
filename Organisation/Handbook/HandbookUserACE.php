@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\ACEEntities\Organisation\Handbook;
 
+use AppBundle\ACEEntities\Core\Core\UserACE;
 use AppBundle\Entity\Organisation\Handbook\Handbook;
 use AppBundle\ACEEntities\Core\Core\UserGroupACE;
 use AppBundle\Services\Core\Framework\BaseVoterSupportInterface;
@@ -18,15 +19,16 @@ use Hateoas\Configuration\Annotation as Hateoas;
  * @Hateoas\Relation(
  *  "self",
  *  href= @Hateoas\Route(
- *         "get_organisation_usergroup_cloudbookacl",
+ *         "get_organisation_user_cloudbookacl",
  *         parameters = { "organisation" = "expr(object.getUserGroup().getOrganisation().getId())","userGroup" = "expr(object.getUserGroup().getId())","handbookUserGroupACE" = "expr(object.getId())"},
  *         absolute = true
  *     ),
  *  attributes = { "method" = {"put","delete"} },
  * )
+ * 
  *
  */
-class HandbookUserGroupACE extends UserGroupACE implements BaseVoterSupportInterface
+class HandbookUserACE extends UserACE implements BaseVoterSupportInterface
 {
     /**
      * @var ArrayCollection
