@@ -13,7 +13,7 @@ use Hateoas\Configuration\Annotation as Hateoas;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="organisation__handbook__handbook_user_group_ace")
+ * @ORM\Table(name="organisation__handbook__handbook_user_ace")
  *
  * @Serializer\XmlRoot("handbook_user_group_ACE")
  * @Hateoas\Relation(
@@ -32,8 +32,8 @@ class HandbookUserACE extends UserACE implements BaseVoterSupportInterface
 {
     /**
      * @var ArrayCollection
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Organisation\Handbook\Handbook",inversedBy="userGroupACEs")
-     * @ORM\JoinTable(name="organisation__handbook__handbook_ace_selections",
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Organisation\Handbook\Handbook",inversedBy="userACEs")
+     * @ORM\JoinTable(name="organisation__handbook__user_ace_selections",
      *      joinColumns={@ORM\JoinColumn(name="id_ace", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="id_handbook", referencedColumnName="id")}
      * )

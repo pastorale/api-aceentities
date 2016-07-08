@@ -31,7 +31,7 @@ class HandbookUserGroupACE extends UserGroupACE implements BaseVoterSupportInter
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Organisation\Handbook\Handbook",inversedBy="userGroupACEs")
-     * @ORM\JoinTable(name="organisation__handbook__handbook_ace_selections",
+     * @ORM\JoinTable(name="organisation__handbook__user_group_ace_selections",
      *      joinColumns={@ORM\JoinColumn(name="id_ace", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="id_handbook", referencedColumnName="id")}
      * )
